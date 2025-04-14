@@ -12,8 +12,6 @@ st.set_page_config(
     page_title="Groq Chat Advanced",
     page_icon="💻",
     initial_sidebar_state="expanded",
-    theme="light"
-
 )
 
 # Custom CSS for styling
