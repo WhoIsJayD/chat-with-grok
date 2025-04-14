@@ -11,7 +11,10 @@ st.set_page_config(
     page_icon="🏎️",
     layout="wide",
     page_title="Groq Chat Advanced",
-    initial_sidebar_state="expanded"
+    page_icon="💻",
+    initial_sidebar_state="expanded",
+    theme="light"
+
 )
 
 # Custom CSS for styling
@@ -51,7 +54,7 @@ client = Groq(api_key=st.secrets.get("GROQ_API_KEY", os.environ.get("GROQ_API_KE
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "selected_model" not in st.session_state:
-    st.session_state.selected_model = "llama-3.1-8b-instant"
+    st.session_state.selected_model = "mistral-saba-24b"
 if "conversation_history" not in st.session_state:
     st.session_state.conversation_history = {}
 if "current_conversation_id" not in st.session_state:
