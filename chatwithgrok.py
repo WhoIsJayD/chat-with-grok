@@ -8,7 +8,6 @@ from groq import Groq
 
 # Page configuration
 st.set_page_config(
-    page_icon="🏎️",
     layout="wide",
     page_title="Groq Chat Advanced",
     page_icon="💻",
