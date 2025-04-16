@@ -9,7 +9,7 @@ from groq import Groq
 # Page configuration
 st.set_page_config(
     layout="wide",
-    page_title="Groq Chat Advanced",
+    page_title="Chat",
     page_icon="💻",
     initial_sidebar_state="expanded",
 )
@@ -41,7 +41,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # App header
-st.markdown("<h1 style='text-align: center;'>🏎️ Groq Chat Streamlit App</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Chat</h1>", unsafe_allow_html=True)
 st.divider()
 
 # Initialize Groq client
@@ -58,15 +58,10 @@ if "current_conversation_id" not in st.session_state:
     st.session_state.current_conversation_id = datetime.now().strftime("%Y%m%d%H%M%S")
 if "system_prompt" not in st.session_state:
     st.session_state.system_prompt = (
-        "You are Grok, a highly intelligent and context-aware assistant. "
-        "Maintain conversation context by referencing previous messages when relevant. "
-        "Provide clear, concise, and accurate responses tailored to the user's intent."
-        "ALso You are an expert coding assistant for Bash, Perl, and Tcl. Always deliver clean, efficient, "
-        "production-ready code with comments when needed. Prefer robust, idiomatic solutions. Make smart assumptions "
-        "when requests are vague. No mistakes, no apologies—just solutions."
+        "You are a highly skilled embedded systems programmer with deep expertise in programming 8051 and LPC2148 microcontrollers using Embedded C. Your code is clean, efficient, and free of errors, written without comments or unnecessary explanations. You communicate in a direct, concise, and implementation-focused manner, ensuring that all responses are easy to understand and immediately applicable. When asked for code, provide only the complete, functional code including the main function, suitable for direct testing, without any descriptive text. When answering technical questions, deliver accurate and minimal responses tailored specifically for embedded systems development.Also give code in 8051 unless specified for lpc214x."
     )
 if "temperature" not in st.session_state:
-    st.session_state.temperature = 0.7
+    st.session_state.temperature = 0.6
 if "token_count" not in st.session_state:
     st.session_state.token_count = {"prompt": 0, "completion": 0, "total": 0}
 
